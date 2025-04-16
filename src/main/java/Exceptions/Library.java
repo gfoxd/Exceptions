@@ -35,12 +35,8 @@ public class Library {
     public void returnBook (String title) throws ItemNotFoundException {
         int index = getIndexByTitle(title);
 
-        try {
-            catalog.get(index).availableCopiesPlusOne();
-            System.out.println("Вы успешно вернули книгу!");
-        }catch (ItemNotFoundException e ){
-            throw new ItemNotFoundException("Книга '" + title + "' не найдена в базе");
-        }
+        catalog.get(index).availableCopiesPlusOne();
+        System.out.println("Вы успешно вернули книгу!");
     }
 
     public void addBook (String title, String author, int availableCopies){
